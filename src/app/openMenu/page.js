@@ -82,9 +82,9 @@ const handleAddProduct=()=>{
                 }}
             >
 
-                <h1>Menu</h1>
-                <button onClick={handleBack} style={{ padding: '10px 20px', backgroundColor: 'green', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>Back</button>
-                <button onClick={handleAddProduct} style={{ padding: '10px 20px', backgroundColor: 'green', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>Add product</button>
+                <h1  style={{color:'#f58e4f'}}>Menu</h1>
+                <button onClick={handleBack} style={{ padding: '10px 20px', backgroundColor: '#396352', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>Back</button>
+                <button onClick={handleAddProduct} style={{ padding: '10px 20px', backgroundColor: '#396352', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>Add product</button>
             </div>
             {menuItems.length > 0 ? (
                 <ul style={{ listStyleType: 'none', padding: 0 }}>
@@ -107,7 +107,8 @@ const handleAddProduct=()=>{
                                         width: '220px',
                                         height: '200px',
                                         marginRight: '20px',
-                                        border: '3px solid black',
+                                        border: '5px solid #f5d36f',
+                                        borderRadius:'30%'
                                     }}
                                 />
                             )}
@@ -121,7 +122,7 @@ const handleAddProduct=()=>{
                                 <button onClick={() => handleAddToCart(item)} style={{
                                     padding: '10px',
                                     margin: '5px',
-                                    backgroundColor: 'orangered',
+                                    backgroundColor: '#f58e4f',
                                     color: 'white',
                                     border: 'none',
                                     borderRadius: '5px',
@@ -131,7 +132,7 @@ const handleAddProduct=()=>{
                                 <button onClick={() => handleEditProduct(item.id)} style={{
                                     padding: '10px',
                                     margin: '5px',
-                                    backgroundColor: 'salmon',
+                                    backgroundColor: '#f5d36f',
                                     color: 'white',
                                     border: 'none',
                                     borderRadius: '5px',
@@ -141,7 +142,7 @@ const handleAddProduct=()=>{
                                 <button onClick={() => handleDeleteProduct(item.id)} style={{
                                     padding: '10px',
                                     margin: '5px',
-                                    backgroundColor: 'lightsalmon',
+                                    backgroundColor: '#d9bf89',
                                     color: 'white',
                                     border: 'none',
                                     borderRadius: '5px',
@@ -153,7 +154,7 @@ const handleAddProduct=()=>{
                     ))}
                 </ul>
             ) : (
-                <h1 style={{textAlign:'center',margin:'50px',width:'300px',backgroundColor:'salmon',color:'white',border:'none',borderRadius:'10px',padding:'20px',marginLeft:'670px'}}>No menu items available for this restaurant.</h1>
+                <h1 style={{textAlign:'center',margin:'50px',width:'300px',backgroundColor:'#f5d36f',color:'white',border:'none',borderRadius:'10px',padding:'20px',marginLeft:'670px'}}>No menu items available for this restaurant.</h1>
             )}
         </div>
     );

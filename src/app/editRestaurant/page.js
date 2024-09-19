@@ -66,7 +66,7 @@ export default function EditRestaurant() {
 
     return (
         <div>
-            <h1 style={{ marginLeft: '100px' }}>Edit Restaurant</h1>
+            <h1 style={{ marginLeft: '100px', color:'#f58e4f' }}>Edit Restaurant</h1>
             <br />
             <form onSubmit={handleSubmit} style={{
                 display: 'flex',
@@ -98,7 +98,7 @@ export default function EditRestaurant() {
                     width: '80px',
                     padding: '10px',
                     margin: '7px',
-                    backgroundColor: 'orangered',
+                    backgroundColor: '#f58e4f',
                     color: 'white',
                     border: 'none',
                     borderRadius: '5px',
@@ -110,7 +110,7 @@ export default function EditRestaurant() {
                     width: '80px',
                     padding: '10px',
                     margin: '7px',
-                    backgroundColor: 'salmon',
+                    backgroundColor: '#f5d36f',
                     color: 'white',
                     border: 'none',
                     borderRadius: '5px',

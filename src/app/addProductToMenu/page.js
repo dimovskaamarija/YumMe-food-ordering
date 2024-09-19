@@ -48,7 +48,7 @@ export default function AddProductToMenu() {
     }
     return (
         <div>
-            <h1 style={{ marginLeft: '100px' }}>Add new product</h1>
+            <h1 style={{ marginLeft: '100px',color:'#f58e4f' }}>Add new product</h1>
             <br />
             <form onSubmit={handleSubmit} style={{
                 display: 'flex',
@@ -59,21 +59,21 @@ export default function AddProductToMenu() {
                 marginLeft: '100px'
             }}>
                 <label>Name</label>
-                <input type="text" value={name} onChange={(e) => setName(e.target.value)} style={{height: '30px'}}/>
+                <input type="text" value={name} onChange={(e) => setName(e.target.value)} style={{height: '30px'}} required/>
                 <label>Description</label>
                 <input type="text" value={description} onChange={(e) => setDescription(e.target.value)}
-                       style={{height: '30px'}}/>
+                       style={{height: '30px'}} required/>
                 <label>Category</label>
                 <input type="text" value={category} onChange={(e) => setCategory(e.target.value)}
-                       style={{height: '30px'}}/>
+                       style={{height: '30px'}} required/>
                 <label>Price</label>
-                <input type="text" value={price} onChange={(e) => setPrice(e.target.value)} style={{height: '30px'}}/>
+                <input type="text" value={price} onChange={(e) => setPrice(e.target.value)} style={{height: '30px'}} required/>
                 <label>Image Url</label>
                 <input type="text" value={imageUrl} onChange={(e) => setImageUrl(e.target.value)}
-                       style={{height: '30px'}}/>
+                       style={{height: '30px'}} required/>
                 <button type="submit" style={{
                     padding: '10px',
-                    backgroundColor: 'green',
+                    backgroundColor: '#396352',
                     color: 'white',
                     border: 'none',
                     borderRadius: '5px'
@@ -84,7 +84,7 @@ export default function AddProductToMenu() {
                     width: '80px',
                     padding: '10px',
                     margin: '7px',
-                    backgroundColor: 'salmon',
+                    backgroundColor: '#f5d36f',
                     color: 'white',
                     border: 'none',
                     borderRadius: '5px',

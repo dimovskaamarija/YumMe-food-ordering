@@ -50,7 +50,7 @@ export default function AddProduct() {
 
     return (
         <div style={{padding: '20px', fontFamily: 'Arial, sans-serif'}}>
-            <h1 style={{textAlign: 'center', color: 'orangered'}}>Your Cart</h1>
+            <h1 style={{textAlign: 'center', color: '#f58e4f'}}>Your Cart</h1>
             {cartItems.length > 0 ? (
                 <ul style={{listStyleType: 'none', padding: 0}}>
                     {cartItems.map(item => (
@@ -66,7 +66,7 @@ export default function AddProduct() {
                             }}
                         >
                             <div style={{flex: 1}}>
-                                <h2 style={{margin: 0, color: 'orangered'}}>{item.name}</h2>
+                                <h2 style={{margin: 0, color: '#f58e4f'}}>{item.name}</h2>
                                 <h3 style={{margin: '5px 0'}}>Price: {item.price} мкд.</h3>
                             </div>
                             <div>
@@ -74,7 +74,7 @@ export default function AddProduct() {
                                     onClick={() => handleRemove(item.id)}
                                     style={{
                                         padding: '10px 20px',
-                                        backgroundColor: 'orangered',
+                                        backgroundColor: '#f58e4f',
                                         color: 'white',
                                         border: 'none',
                                         borderRadius: '5px',
@@ -92,7 +92,7 @@ export default function AddProduct() {
                         <button onClick={() => handleMakeOrder()}
                                 style={{
                                     padding: '10px 20px',
-                                    backgroundColor: 'green',
+                                    backgroundColor: '#396352',
                                     color: 'white',
                                     border: 'none',
                                     borderRadius: '5px',
@@ -112,13 +112,13 @@ export default function AddProduct() {
                     </div>
                 </ul>
             ) : (
-                <h2 style={{textAlign:'center',margin:'50px',width:'300px',backgroundColor:'salmon',color:'white',border:'none',borderRadius:'10px',padding:'20px',marginLeft:'670px'}}>Your cart is empty.</h2>
+                <h2 style={{textAlign:'center',margin:'50px',width:'300px',backgroundColor:'#f5d36f',color:'white',border:'none',borderRadius:'10px',padding:'20px',marginLeft:'670px'}}>Your cart is empty.</h2>
             )}
             <button
                 onClick={handleBack}
                 style={{
                     padding: '10px 20px',
-                    backgroundColor: 'green',
+                    backgroundColor: '#396352',
                     color: 'white',
                     border: 'none',
                     borderRadius: '5px',

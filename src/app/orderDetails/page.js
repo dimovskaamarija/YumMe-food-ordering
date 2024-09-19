@@ -60,7 +60,7 @@ export default function OrderDetails() {
 
     return (
         <div>
-            <h1 style={{ marginLeft: '100px', color: 'orangered' }}>Enter order details</h1>
+            <h1 style={{ marginLeft: '100px', color: '#f58e4f' }}>Enter order details</h1>
             <br />
             <form onSubmit={handleSubmit} style={{
                 display: 'flex',
@@ -132,13 +132,13 @@ export default function OrderDetails() {
                     <label htmlFor="deliverHome">Deliver at Home</label>
                 </div>
 
-                <h2 style={{color: 'orangered'}}>Total Price: {totalPrice} мкд.</h2>
+                <h2 style={{color: '#f58e4f'}}>Total Price: {totalPrice} мкд.</h2>
 
                     <button
                         type="submit"
                         style={{
                             padding: '10px 20px',
-                            backgroundColor: 'green',
+                            backgroundColor: '#396352',
                             color: 'white',
                             border: 'none',
                             borderRadius: '5px',
@@ -157,7 +157,7 @@ export default function OrderDetails() {
                         onClick={handleBack}
                         style={{
                             padding: '10px 20px',
-                            backgroundColor: 'green',
+                            backgroundColor: '#396352',
                             color: 'white',
                             border: 'none',
                             borderRadius: '5px',

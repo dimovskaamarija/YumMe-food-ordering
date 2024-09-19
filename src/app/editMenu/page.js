@@ -64,7 +64,7 @@ export default function EditProductMenu() {
 
     return (
         <div>
-            <h1 style={{ marginLeft: '100px' }}>Edit Product</h1>
+            <h1 style={{ marginLeft: '100px' ,color:'#f58e4f'}}>Edit Product</h1>
             <br />
             <form onSubmit={handleSubmit}
                   style={{ display: 'flex', flexDirection: 'column', gap: '10px', width: '300px', marginLeft: '100px' }}>
@@ -83,8 +83,8 @@ export default function EditProductMenu() {
                 <label>Image Url</label>
                 <input type="text" value={imageUrl} onChange={(e) => setImageUrl(e.target.value)} style={{ height: "30px" }} />
 
-                <button type="submit" style={{ width: '80px', padding: '10px', margin: '7px', backgroundColor: 'orangered', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer', marginLeft: '400px' }}>Save</button>
-                <button onClick={handleback} style={{ width: '80px', padding: '10px', margin: '7px', backgroundColor: 'salmon', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer', marginLeft: '400px' }}>Cancel</button>
+                <button type="submit" style={{ width: '80px', padding: '10px', margin: '7px', backgroundColor: '#f58e4f', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer', marginLeft: '400px' }}>Save</button>
+                <button onClick={handleback} style={{ width: '80px', padding: '10px', margin: '7px', backgroundColor: '#f5d36f', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer', marginLeft: '400px' }}>Cancel</button>
             </form>
         </div>
     );

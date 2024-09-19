@@ -28,7 +28,7 @@ export default function OrderHistory() {
     return (
         <div style={{margin: '20px'}}>
 
-            <h1 style={{color: 'orangered'}}>Order History</h1>
+            <h1 style={{color: '#f58e4f'}}>Order History</h1>
             <table style={{
                 width: '100%',
                 borderCollapse: 'collapse',
@@ -63,7 +63,7 @@ export default function OrderHistory() {
                 onClick={handleHomeClick}
                 style={{
                     padding: '10px 20px',
-                    backgroundColor: 'darksalmon',
+                    backgroundColor: '#f5d36f',
                     color: 'white',
                     border: 'none',
                     borderRadius: '5px',

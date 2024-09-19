@@ -41,8 +41,8 @@ export default function Home() {
   return (
       <div style={{ padding: '20px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-          <h1>List of Restaurants</h1>
-          <button onClick={handleAddRestaurantClick} style={{ padding: '10px 20px', backgroundColor: 'green', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>Add Restaurant</button>
+          <h1 style={{color:'#f58e4f'}}>List of Restaurants</h1>
+          <button onClick={handleAddRestaurantClick} style={{ padding: '10px 20px', backgroundColor: '#396352', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>Add Restaurant</button>
         </div>
         {restaurants.length > 0 ? (
             <ul style={{ listStyleType: 'none', padding: 0 }}>
@@ -52,7 +52,7 @@ export default function Home() {
                         <img
                             src={restaurant.imageUrl}
                             alt={restaurant.name}
-                            style={{ width: '200px', height: '200px', marginRight: '20px', border: '3px solid black' }}
+                            style={{ width: '200px', height: '200px', marginRight: '20px', border: '5px solid #f5d36f', borderRadius:'30%' }}
                         />
                     )}
                     <div style={{ flex: 1 }}>
@@ -62,15 +62,15 @@ export default function Home() {
                       <p style={{ margin: '5px 0' }}><strong>Working hours:</strong> {restaurant.openingHours}</p>
                     </div>
                     <div>
-                      <button onClick={()=>router.push(`/openMenu?id=${restaurant.id}`)} style={{ padding: '10px', margin: '5px', backgroundColor: 'orangered', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>Menu</button>
-                      <button onClick={() => router.push(`/editRestaurant?id=${restaurant.id}`)} style={{ padding: '10px', margin: '5px', backgroundColor: 'salmon', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>Edit</button>
-                      <button onClick={() => handleDelete(restaurant.id)} style={{ padding: '10px', margin: '5px', backgroundColor: 'lightsalmon', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>Delete</button>
+                      <button onClick={()=>router.push(`/openMenu?id=${restaurant.id}`)} style={{ padding: '10px', margin: '5px', backgroundColor: '#f58e4f', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>Menu</button>
+                      <button onClick={() => router.push(`/editRestaurant?id=${restaurant.id}`)} style={{ padding: '10px', margin: '5px', backgroundColor: '#f5d36f', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>Edit</button>
+                      <button onClick={() => handleDelete(restaurant.id)} style={{ padding: '10px', margin: '5px', backgroundColor: '#ee9080', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>Delete</button>
                     </div>
                   </li>
               ))}
             </ul>
         ) : (
-            <h1 style={{textAlign:'center',margin:'50px',width:'300px',backgroundColor:'salmon',color:'white',border:'none',borderRadius:'10px',padding:'20px',marginLeft:'670px'}}>No restaurants available</h1>
+            <h1 style={{textAlign:'center',margin:'50px',width:'300px',backgroundColor:'#f5d36f',color:'white',border:'none',borderRadius:'10px',padding:'20px',marginLeft:'670px'}}>No restaurants available</h1>
         )}
       </div>
   );

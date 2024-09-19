@@ -43,7 +43,7 @@ export default function AddRestaurant() {
     }
     return (
         <div>
-            <h1 style={{ marginLeft: '100px' }}>Add New Restaurant</h1>
+            <h1 style={{ marginLeft: '100px',color:'#f58e4f' }}>Add New Restaurant</h1>
             <br />
             <form onSubmit={handleSubmit} style={{
                 display: 'flex',
@@ -54,28 +54,28 @@ export default function AddRestaurant() {
                 marginLeft: '100px'
             }}>
                 <label>Name</label>
-                <input type="text" value={name} onChange={(e) => setName(e.target.value)} style={{height: '30px'}}/>
+                <input type="text" value={name} onChange={(e) => setName(e.target.value)} style={{height: '30px'}} required/>
 
                 <label>Address</label>
                 <input type="text" value={address} onChange={(e) => setAddress(e.target.value)}
-                       style={{height: '30px'}}/>
+                       style={{height: '30px'}} required/>
 
                 <label>Phone</label>
                 <input type="text" value={contact} onChange={(e) => setContact(e.target.value)}
-                       style={{height: '30px'}}/>
+                       style={{height: '30px'}} required/>
 
                 <label>Working hours</label>
                 <input type="text" value={openingHours} onChange={(e) => setOpeningHours(e.target.value)}
-                       style={{height: '30px'}}/>
+                       style={{height: '30px'}} required/>
 
                 <label>Image URL</label>
                 <input type="text" value={imageUrl} onChange={(e) => setImageUrl(e.target.value)}
-                       style={{height: '30px'}}/>
+                       style={{height: '30px'}} required/>
                 <button type="submit" style={{
                     width: '70px',
                     padding: '10px',
                     margin: '7px',
-                    backgroundColor: 'orangered',
+                    backgroundColor: '#f58e4f',
                     color: 'white',
                     border: 'none',
                     borderRadius: '5px',
@@ -87,7 +87,7 @@ export default function AddRestaurant() {
                     width: '80px',
                     padding: '10px',
                     margin: '7px',
-                    backgroundColor: 'salmon',
+                    backgroundColor: '#f5d36f',
                     color: 'white',
                     border: 'none',
                     borderRadius: '5px',
