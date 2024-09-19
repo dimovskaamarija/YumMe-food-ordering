@@ -30,6 +30,11 @@ export default function AddProduct() {
     const handleBack = () => {
         router.push(`/`);
     };
+    const handleMakeOrder=()=>{
+        router.push(`/orderDetails?total=${totalPrice}`)
+    }
+
+
 
     const handleRemove = async (id) => {
         try {
@@ -44,10 +49,10 @@ export default function AddProduct() {
     };
 
     return (
-        <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
-            <h1 style={{ textAlign: 'center', color: 'orangered' }}>Your Cart</h1>
+        <div style={{padding: '20px', fontFamily: 'Arial, sans-serif'}}>
+            <h1 style={{textAlign: 'center', color: 'orangered'}}>Your Cart</h1>
             {cartItems.length > 0 ? (
-                <ul style={{ listStyleType: 'none', padding: 0 }}>
+                <ul style={{listStyleType: 'none', padding: 0}}>
                     {cartItems.map(item => (
                         <li
                             key={item.id}
@@ -60,9 +65,9 @@ export default function AddProduct() {
                                 marginBottom: '10px',
                             }}
                         >
-                            <div style={{ flex: 1 }}>
-                                <h2 style={{ margin: 0, color: 'orangered' }}>{item.name}</h2>
-                                <h3 style={{ margin: '5px 0' }}>Price: {item.price} мкд.</h3>
+                            <div style={{flex: 1}}>
+                                <h2 style={{margin: 0, color: 'orangered'}}>{item.name}</h2>
+                                <h3 style={{margin: '5px 0'}}>Price: {item.price} мкд.</h3>
                             </div>
                             <div>
                                 <button
@@ -83,50 +88,52 @@ export default function AddProduct() {
                         </li>
                     ))}
                     <h2>Total Price: {totalPrice} мкд.</h2>
-                    <div style={{display:'flex',justifyContent:'space-between', marginTop:'20px'}}>
-                    <button
-                        style={{
-                            padding: '10px 20px',
-                            backgroundColor: 'green',
-                            color: 'white',
-                            border: 'none',
-                            borderRadius: '5px',
-                            cursor: 'pointer',
-                            fontSize: '18px',
-                            marginTop: '20px',
-                            display: 'block',
-                            width: '200px',
-                            marginLeft: 'auto',
-                            marginRight: 'auto',
-                        }}
-                    >
-                        Order
-                    </button>
+                    <div style={{display: 'flex', justifyContent: 'space-between', marginTop: '20px'}}>
+                        <button onClick={() => handleMakeOrder()}
+                                style={{
+                                    padding: '10px 20px',
+                                    backgroundColor: 'green',
+                                    color: 'white',
+                                    border: 'none',
+                                    borderRadius: '5px',
+                                    cursor: 'pointer',
+                                    fontSize: '18px',
+                                    marginTop: '20px',
+                                    display: 'block',
+                                    width: '200px',
+                                    marginLeft: 'auto',
+                                    marginRight: 'auto',
+                                }}
+                        >
+                            Order
+                        </button>
 
-                    <button
-                        onClick={handleBack}
-                        style={{
-                            padding: '10px 20px',
-                            backgroundColor: 'green',
-                            color: 'white',
-                            border: 'none',
-                            borderRadius: '5px',
-                            cursor: 'pointer',
-                            fontSize: '18px',
-                            marginTop: '20px',
-                            display: 'block',
-                            width: '200px',
-                            marginLeft: 'auto',
-                            marginRight: 'auto',
-                        }}
-                    >
-                        Back
-                    </button>
+
                     </div>
                 </ul>
             ) : (
-                <p>Your cart is empty.</p>
+                <h2 style={{textAlign:'center',margin:'50px',width:'300px',backgroundColor:'salmon',color:'white',border:'none',borderRadius:'10px',padding:'20px',marginLeft:'670px'}}>Your cart is empty.</h2>
             )}
+            <button
+                onClick={handleBack}
+                style={{
+                    padding: '10px 20px',
+                    backgroundColor: 'green',
+                    color: 'white',
+                    border: 'none',
+                    borderRadius: '5px',
+                    cursor: 'pointer',
+                    fontSize: '18px',
+                    marginTop: '20px',
+                    display: 'block',
+                    width: '200px',
+                    marginLeft: 'auto',
+                    marginRight: 'auto',
+                }}
+            >
+                Home
+            </button>
         </div>
+
     );
 }

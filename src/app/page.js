@@ -70,7 +70,7 @@ export default function Home() {
               ))}
             </ul>
         ) : (
-            <p>No restaurants available</p>
+            <h1 style={{textAlign:'center',margin:'50px',width:'300px',backgroundColor:'salmon',color:'white',border:'none',borderRadius:'10px',padding:'20px',marginLeft:'670px'}}>No restaurants available</h1>
         )}
       </div>
   );

@@ -1,9 +1,16 @@
+"use client"
 import Image from 'next/image';
 import React from 'react';
 import Button from 'next'
+import Link from "next/link";
+import {useRouter} from "next/navigation";
 
 
 function Header() {
+    const router=useRouter()
+    const handleOrderHistory=()=>{
+        router.push("/orderHistory")
+    }
     return (
         <div style={{
                 display: 'flex',
@@ -21,7 +28,21 @@ function Header() {
     }} placeholder={'Search here...'}/>
 
 </div>
-            <div></div>
+            <div>
+                <Link href="/addToCart" passHref>
+                    <div style={{cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',}}>
+                        <Image
+                            src="/cart.png"
+                            alt="Cart"
+                            width={50}
+                            height={50}
+
+                        />
+                    </div>
+                </Link>
+            </div>
             <button style={{
                 backgroundColor: 'orangered',
                 color: 'white',
@@ -45,7 +66,19 @@ function Header() {
                 margin:"15px"
 
             }}>Sign up</button>
+            <button onClick={handleOrderHistory} style={{
+                backgroundColor: 'lightsalmon',
+                color: 'white',
+                padding: '10px 20px',
+                border: 'none',
+                borderRadius: '5px',
+                cursor: 'pointer',
+                marginLeft:"15px"
+
+            }}>Order History</button>
+
         </div>
+
     );
 }
 

@@ -81,6 +81,7 @@ const handleAddProduct=()=>{
                     marginBottom: '20px'
                 }}
             >
+
                 <h1>Menu</h1>
                 <button onClick={handleBack} style={{ padding: '10px 20px', backgroundColor: 'green', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>Back</button>
                 <button onClick={handleAddProduct} style={{ padding: '10px 20px', backgroundColor: 'green', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>Add product</button>
@@ -152,7 +153,7 @@ const handleAddProduct=()=>{
                     ))}
                 </ul>
             ) : (
-                <p>No menu items available for this restaurant.</p>
+                <h1 style={{textAlign:'center',margin:'50px',width:'300px',backgroundColor:'salmon',color:'white',border:'none',borderRadius:'10px',padding:'20px',marginLeft:'670px'}}>No menu items available for this restaurant.</h1>
             )}
         </div>
     );
