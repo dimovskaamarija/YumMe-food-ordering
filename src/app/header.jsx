@@ -23,15 +23,7 @@ function Header() {
         }}>
             <Image src='/YUM.jpg' width={150} height={100} alt="logo" />
 
-            <input type='text' style={{
-                width: '300px',
-                height: '40px',
-                border: '1px solid #ccc',
-                borderRadius: '5px',
-                padding: '0 10px',
-                boxShadow: 'inset 0 1px 3px rgba(0,0,0,0.1)',
-                marginLeft: '20px'
-            }} placeholder={'Search here...'} />
+
 
             <div style={{ display: 'flex', alignItems: 'center' }}>
                 <Link href="/addToCart" passHref>
