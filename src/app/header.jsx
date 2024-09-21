@@ -1,13 +1,39 @@
 "use client";
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { signOut, onAuthStateChanged } from "firebase/auth";
+import { auth } from "/firebase/firebaseConfig";
 
 function Header() {
+    const [user, setUser] = useState(null);
     const router = useRouter();
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+            setUser(currentUser);
+        });
+        return () => unsubscribe();
+    }, []);
+
     const handleOrderHistory = () => {
         router.push("/orderHistory");
+    };
+    const handleSignIn = () => {
+        router.push("/signIn");
+    };
+    const handleSignUp = () => {
+        router.push("/signUp");
+    };
+    const signOutFunction = async () => {
+        try {
+            await signOut(auth);
+            setUser(null);
+            router.push("/signIn");
+        } catch (error) {
+            console.error("Error signing out:", error);
+        }
     };
 
     return (
@@ -22,17 +48,6 @@ function Header() {
             margin: '15px'
         }}>
             <Image src='/YUM.jpg' width={150} height={100} alt="logo" />
-
-            <input type='text' style={{
-                width: '300px',
-                height: '40px',
-                border: '1px solid #ccc',
-                borderRadius: '5px',
-                padding: '0 10px',
-                boxShadow: 'inset 0 1px 3px rgba(0,0,0,0.1)',
-                marginLeft: '20px'
-            }} placeholder={'Search here...'} />
-
             <div style={{ display: 'flex', alignItems: 'center' }}>
                 <Link href="/addToCart" passHref>
                     <div style={{
@@ -49,41 +64,59 @@ function Header() {
                     </div>
                 </Link>
 
-                <button style={{
-                    backgroundColor: '#f58e4f',
-                    color: 'white',
-                    padding: '10px 15px',
-                    border: 'none',
-                    borderRadius: '5px',
-                    cursor: 'pointer',
-                    marginLeft: '15px',
-                    transition: 'background-color 0.3s',
-                    fontWeight: 'bold'
-                }}>Sign in</button>
+                {!user ? (
+                    <>
+                        <button onClick={handleSignIn} style={{
+                            backgroundColor: '#f58e4f',
+                            color: 'white',
+                            padding: '10px 15px',
+                            border: 'none',
+                            borderRadius: '5px',
+                            cursor: 'pointer',
+                            marginLeft: '15px',
+                            transition: 'background-color 0.3s',
+                            fontWeight: 'bold'
+                        }}>Sign in</button>
 
-                <button style={{
-                    backgroundColor: '#f5d36f',
-                    color: 'white',
-                    padding: '10px 15px',
-                    border: 'none',
-                    borderRadius: '5px',
-                    cursor: 'pointer',
-                    marginLeft: '15px',
-                    transition: 'background-color 0.3s',
-                    fontWeight: 'bold'
-                }}>Sign up</button>
+                        <button onClick={handleSignUp} style={{
+                            backgroundColor: '#f5d36f',
+                            color: 'white',
+                            padding: '10px 15px',
+                            border: 'none',
+                            borderRadius: '5px',
+                            cursor: 'pointer',
+                            marginLeft: '15px',
+                            transition: 'background-color 0.3s',
+                            fontWeight: 'bold'
+                        }}>Sign up</button>
+                    </>
+                ) : (
+                    <>
+                        <button onClick={signOutFunction} style={{
+                            backgroundColor: '#e8b48c',
+                            color: 'white',
+                            padding: '10px 15px',
+                            border: 'none',
+                            borderRadius: '5px',
+                            cursor: 'pointer',
+                            marginLeft: '15px',
+                            transition: 'background-color 0.3s',
+                            fontWeight: 'bold'
+                        }}>Sign out</button>
 
-                <button onClick={handleOrderHistory} style={{
-                    backgroundColor: '#ee9080',
-                    color: 'white',
-                    padding: '10px 15px',
-                    border: 'none',
-                    borderRadius: '5px',
-                    cursor: 'pointer',
-                    marginLeft: '15px',
-                    transition: 'background-color 0.3s',
-                    fontWeight: 'bold'
-                }}>Order History</button>
+                        <button onClick={handleOrderHistory} style={{
+                            backgroundColor: '#ee9080',
+                            color: 'white',
+                            padding: '10px 15px',
+                            border: 'none',
+                            borderRadius: '5px',
+                            cursor: 'pointer',
+                            marginLeft: '15px',
+                            transition: 'background-color 0.3s',
+                            fontWeight: 'bold'
+                        }}>Order History</button>
+                    </>
+                )}
             </div>
         </div>
     );
